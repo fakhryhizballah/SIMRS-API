@@ -50,9 +50,8 @@ https://github.com/mas-elkhanza/SIMRS-Khanza
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
-
-`ANOTHER_API_KEY`
+`PORT`
+`JWT_SECRET_KEY`
 
 ## Authors
 
