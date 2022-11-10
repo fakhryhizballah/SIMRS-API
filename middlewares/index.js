@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     login: (req, res, next) => {
         try {
-            const token = req.headers['authorization'];
+            const token = (req.headers['authorization']).split(' ')[1];
             if (!token) {
                 return res.status(401).json({
                     status: false,
@@ -11,6 +11,7 @@ module.exports = {
                     data: null
                 });
             }
+            console.log(token);
 
             const secretKey = process.env.JWT_SECRET_KEY;
             const decoded = jwt.verify(token, secretKey);
