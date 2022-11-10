@@ -2,7 +2,7 @@ const { getUser,getPegawai } = require('../model/akun');
 var jwt = require('jsonwebtoken');
 module.exports = {
     login:async (req, res) => {
-        const { user, password, privilege } = req.body;
+        try {const { user, password, privilege } = req.body;
         const isExist = await getUser(user, password);
 
         // console.log(isExist);
@@ -39,7 +39,16 @@ module.exports = {
                 message: 'User/Password Salah',
                 data : `user = ${user} dan Pw : ${password}`
             });
-        }      
+        }   
+            
+        } catch (error) {
+            res.status(400).json({
+                error: true,
+                message: 'masukan user, password, privilege',
+                data : null
+            });
+        }
+           
     },
     dokter:async (req, res) => {
         const { user, password } = req.body;

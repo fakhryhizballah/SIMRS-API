@@ -28,9 +28,14 @@ module.exports = {
                 });
             }
 
+            // return res.status(401).json({
+            //     status: false,
+            //     message: err.message,
+            //     data: null
+            // });
             return res.status(401).json({
                 status: false,
-                message: err.message,
+                message: "youre not authorized !!!",
                 data: null
             });
         }
