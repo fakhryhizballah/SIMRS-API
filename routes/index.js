@@ -5,7 +5,7 @@ const base = require('../controllers');
 const auth = require('../controllers/AuthController');
 const dokter = require('../controllers/DokterController');
 const igd = require('../controllers/IgdController');
-const ranap = require('../controllers/RanapController');
+// const ranap = require('../controllers/RanapController');
 const ralan = require('../controllers/RalanController');
 
 const middleware = require('../middlewares');
