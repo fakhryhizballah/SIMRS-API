@@ -6,10 +6,10 @@ module.exports = {
         try {
             const { from, until } = req.body;
              let data = await getLaporan(from, until);
-     return res.status(200).json({
+             return res.status(200).json({
             error: false,
-            message: 'Daftar rekam medis pasien',
-            // record: data.length,
+            message: 'Laporan Rawat Jalan',
+            record: data.length,
             data: data
         });
         } catch (error) {

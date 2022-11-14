@@ -110,7 +110,7 @@ FROM
 			)
 	)
 WHERE
-	reg_periksa.tgl_registrasi BETWEEN '2022-10-1' AND '2022-10-2' AND
+	reg_periksa.tgl_registrasi BETWEEN ? AND ? AND
 	reg_periksa.status_lanjut = 'Ralan'
 	`;
     const result = await con.query(sql, [from, until]);
