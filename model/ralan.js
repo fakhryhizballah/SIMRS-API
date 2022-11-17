@@ -3,7 +3,7 @@ var getLaporan = async function (from, until) {
     var sql = `
 	SELECT
 	reg_periksa.no_rawat AS no_rawat, 
-	reg_periksa.tgl_registrasi AS tgl_registrasi, 
+	date_format(tgl_registrasi, %d-%m-%Y) AS tgl_registrasi, 
 	reg_periksa.jam_reg AS jam_reg, 
 	reg_periksa.no_rkm_medis AS no_rkm_medis, 
 	pasien.no_ktp AS no_ktp, 
@@ -14,7 +14,7 @@ var getLaporan = async function (from, until) {
 	pasien.suku_bangsa AS suku_bangsa, 
 	pasien.pekerjaan AS pekerjaan, 
 	pasien.pnd AS pnd, 
-	pasien.tgl_lahir AS tgl_lahir, 
+	date_format(pasien.tgl_lahir, %d-%m-%Y) AS tgl_lahir, 
 	pasien.umur AS umur, 
 	pasien.alamat AS alamat, 
 	kelurahan.nm_kel AS nm_kel, 
